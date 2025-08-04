@@ -61,14 +61,15 @@ header{
 
 .grid-img{
     width:100%;
-    height:100%;
+    
+    max-width: 640px;
     object-fit: cover;
     border-radius:0.5rem;
 }
 
 .grid{
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(15rem,1fr));
+    display: flex;
+    overflow-x: scroll;
     row-gap:1rem;
     column-gap: 1rem;
     margin-left: 1rem;
@@ -195,14 +196,13 @@ header{
 .match{
     display: flex;
     flex-direction: column;
-    
     align-items: center;
     gap: 1rem;
     box-shadow: 0px 0px 2px rgb(0, 0, 0);
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 2rem;
-    width: 90%;
+    width: 80%;
 }
 
 .team-container{
@@ -252,9 +252,8 @@ header{
 }
 
 .player-grid{
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(15rem,1fr)) ;
-    gap:2rem;
+    display: flex;
+    overflow-x: scroll;
     padding-left:1rem;
     padding-right: 1rem;
     column-gap: 3rem;
@@ -263,8 +262,9 @@ header{
 .player-container{
     display: flex;
     flex-direction: column;
+    margin-top: 0.75rem;
     align-items: center;
-    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
     border-radius: 8px;
 }
 
@@ -364,3 +364,22 @@ header{
         padding: 0;
     }
     }
+
+@media(max-width:470px){
+    .team,.date{
+        font-size: 0.85rem;
+    }
+    .matches{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        overflow-x: scroll;
+        gap: 2rem;
+    }
+    .match{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
